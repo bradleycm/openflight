@@ -8,3 +8,11 @@ http_archive(
   strip_prefix = "rules_python-{}".format(rules_python_version),
   url = "https://github.com/bazelbuild/rules_python/archive/{}.zip".format(rules_python_version),
 )
+
+http_archive(
+  name = "openflight_libraries",
+  url = "https://github.com/bradleycm/openflight/archive/012ee516b91af02873d576a9fcfaca946d7af793.zip",
+  strip_prefix = "libraries",
+)
+
+load("@openflight_libraries/openflight_video:deps.bzl", "openflight_video")

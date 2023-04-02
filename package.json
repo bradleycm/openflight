@@ -2,6 +2,8 @@
   "name": "openflight",
   "version": "0.0.1",
   "scripts": {
+    "build": "bazel build //openflight:openflight_executable",
+    "start": "bazel run //openflight:openflight",
     "build:video": "bazel build //openflight_video:openflight_video_executable",
     "start:video": "bazel run //openflight_video:openflight_video"
   },
