@@ -13,7 +13,7 @@ http_archive(
   name = "openflight_libraries",
   sha256 = "592565f41c879330f8193ae9e5c3f855e4d6de6c",
   urls = [
-    "<url>",
+    "https://github.com/bradleycm/openflight/blob/main/openflight_libraries.zip",
   ],
   build_file_content = """
 package(default_visibility = ["//visibility:public"])

@@ -1,0 +1,38 @@
+name: Archive Branches
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get Git Hash
+        id: git_hash
+        run: echo ::set-output name=hash::$(git rev-parse --short HEAD)
+
+      - name: Create Archive Branch
+        run: |
+          git checkout -b archive/$GITHUB_REF_SLUG/${{ steps.git_hash.outputs.hash }}
+          git archive --prefix=openflight/ -o openflight.tar.gz HEAD
+          git add openflight.tar.gz
+          git commit -m "Add archive for $GITHUB_REF_SLUG commit ${{ steps.git_hash.outputs.hash }}"
+          git push origin archive/$GITHUB_REF_SLUG/${{ steps.git_hash.outputs.hash }}
+
+      - name: Get SHA256 Hash
+        id: sha256
+        run: |
+          echo $(curl -L -s https://github.com/bradleycm/openflight/archive/archive/$GITHUB_REF_SLUG/${{ steps.git_hash.outputs.hash }}.tar.gz | sha256sum | awk '{print $1}')
+
+      - name: Add SHA256 Hash to Commit
+        run: |
+          git checkout archive/$GITHUB_REF_SLUG/${{ steps.git_hash.outputs.hash }}
+          echo ${{ steps.sha256.outputs.sha256 }} > sha256
+          git add sha256
+          git commit -m "Add SHA256 hash for archive/$GITHUB_REF_SLUG/${{ steps.git_hash.outputs.hash }}"
+          git push origin archive/$GITHUB_REF_SLUG/${{ steps.git_hash.outputs.hash }}
