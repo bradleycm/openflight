@@ -11,7 +11,7 @@ http_archive(
 
 http_archive(
   name = "openflight_libraries",
-  sha256 = "<SHA256_HASH>",
-  strip_prefix = "<ARCHIVE_NAME_WITHOUT_EXTENSION>",
-  urls = ["<URL_OF_THE_ARCHIVE>"],
+  sha256 = "3cc2ad048dd85a317bce5936a43598df2bdba4ac99486e3bdc380cee8fbb2dbe",
+  strip_prefix = "openflight-0.0.1",
+  urls = ["https://github.com/bradleycm/openflight/archive/refs/tags/v0.0.1.zip"],
 )

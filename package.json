@@ -4,8 +4,10 @@
   "scripts": {
     "build": "bazel build //openflight:openflight_executable",
     "start": "bazel run //openflight:openflight",
-    "build:video": "bazel build //openflight_video:openflight_video_executable",
-    "start:video": "bazel run //openflight_video:openflight_video"
+    "build:video": "bazel build //openflight_libraries/openflight_video:openflight_video_executable",
+    "start:video": "bazel run //openflight_libraries/openflight_video:openflight_video",
+    "build:audio": "bazel build //openflight_libraries/openflight_audio:openflight_audio_executable",
+    "start:audio": "bazel run //openflight_libraries/openflight_audio:openflight_audio"
   },
   "dependencies": {
     "typescript": "^4.5.4"
