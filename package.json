@@ -1,0 +1,11 @@
+{
+  "name": "openflight",
+  "version": "0.0.1",
+  "scripts": {
+    "build:video": "bazel build //openflight_video:openflight_video_executable",
+    "start:video": "bazel run //openflight_video:openflight_video"
+  },
+  "dependencies": {
+    "typescript": "^4.5.4"
+  }
+}

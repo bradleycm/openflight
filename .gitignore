@@ -1,0 +1,36 @@
+# Bazel build directories
+/bazel-*
+
+# Python virtual environments
+/.venv/
+/venv/
+/pyvenv.cfg
+
+# Node.js build directories
+/node_modules/
+/.cache/
+/.pnp/
+/.yarn/
+/yarn-error.log
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled Python files from Cython
+*.so
+
+# Compiled C/C++ files
+*.o
+*.out
+*.obj
+
+# Other compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore VSCode settings
+.vscode/
