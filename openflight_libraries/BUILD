@@ -9,17 +9,9 @@ http_archive(
   url = "https://github.com/bazelbuild/rules_python/archive/{}.zip".format(rules_python_version),
 )
 
-http_archive(
-  name = "openflight_libraries",
-  sha256 = "592565f41c879330f8193ae9e5c3f855e4d6de6c",
-  urls = [
-    "<url>",
-  ],
-  build_file_content = """
-package(default_visibility = ["//visibility:public"])
-
-load("@openflight_libraries//:openflight_video", "openflight_video")
-
-# Declare additional libraries here.
-"""
+py_library(
+  name = "openflight_video",
+  srcs = glob(["openflight_video/src/**/*.py"]),
+  deps = [],
+  visibility = ["//visibility:public"],
 )

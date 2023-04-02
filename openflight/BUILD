@@ -1,6 +1,6 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@openflight_components//openflight_video:deps.bzl", "openflight_video")
+load("@openflight_libraries//openflight_video:openflight_video.bzl", "openflight_video")
 
 py_library(
   name = "openflight",
