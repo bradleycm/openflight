@@ -6,6 +6,7 @@ import src
 from src.streaming import OpenFlightVideoStream
 
 def main():
+  print('[OpenFlight]::[Video]::[Executable]::[main]::[INFO] Starting OpenFlight Video executable...')
   # Path to output video file
   output_path = os.path.join(os.getcwd(), 'video.avi')  
 

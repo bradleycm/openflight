@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "build": "bazel build //openflight:openflight_executable",
-    "start": "bazel run //openflight:openflight",
-    "build:video": "bazel build //openflight_libraries/openflight_video:openflight_video_executable",
-    "start:video": "bazel run //openflight_libraries/openflight_video:openflight_video",
-    "build:audio": "bazel build //openflight_libraries/openflight_audio:openflight_audio_executable",
-    "start:audio": "bazel run //openflight_libraries/openflight_audio:openflight_audio"
+    "start": "bazel run //openflight:openflight_executable",
+    "build:video": "bazel build //openflight/openflight_video:openflight_video_executable",
+    "start:video": "bazel run //openflight/openflight_video:openflight_video_executable",
+    "build:audio": "bazel build //openflight/openflight_audio:openflight_audio_executable",
+    "start:audio": "bazel run //openflight/openflight_audio:openflight_audio_executable"
   },
   "dependencies": {
     "typescript": "^4.5.4"

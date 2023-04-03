@@ -9,9 +9,8 @@ http_archive(
   url = "https://github.com/bazelbuild/rules_python/archive/{}.zip".format(rules_python_version),
 )
 
-http_archive(
-  name = "openflight_libraries",
-  sha256 = "3cc2ad048dd85a317bce5936a43598df2bdba4ac99486e3bdc380cee8fbb2dbe",
-  strip_prefix = "openflight-0.0.1",
-  urls = ["https://github.com/bradleycm/openflight/archive/refs/tags/v0.0.1.zip"],
-)
+# http_archive(
+#   name = "openflight_libraries",
+#   sha256 = "123bc1114f31012209c5ab0df53ed6661345411a192a862988dcf98356e936cc",
+#   urls = ["https://github.com/bradleycm/openflight/archive/refs/tags/v0.0.2.zip"],
+# )
